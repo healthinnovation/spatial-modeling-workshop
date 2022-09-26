@@ -1,0 +1,65 @@
+project:
+  type: website
+  resources:
+    - "images/twitter-card.png"
+  render:
+    - "*.qmd"
+
+website:
+  page-navigation: true
+  title: "Spatial predictive models with R"
+  description: "Homepage for rstudio::conf(2022) workshop"
+  site-url: "https://rstudio-conf-2022.github.io/ggplot2-graphic-design/"
+  
+  repo-url: https://github.com/rstudio-conf-2022/ggplot2-graphic-design
+  repo-actions: [edit, issue]
+  
+  open-graph: true
+  twitter-card:
+   creator: "@Gabc91"
+   image: "/images/twitter-card.png"
+  favicon: "/images/favicon.ico"
+
+  page-footer:
+      left: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+      right: "&copy; Copyright 2022, Healthinnovation"
+      background: "#4DA6BB"
+
+  navbar:
+      background: "#4DA6BB"
+      logo: "images/logo.png"
+      pinned: true
+      align: center
+      right:
+        - icon: download
+          text: Downloads
+          menu: 
+            - text: All Course Materials
+              href: ggplot2-course-material.zip
+            - text: Data Sets
+              href: ggplot2-course-data.zip
+            - text: Font Files
+              href: ggplot2-course-fonts.zip
+        - icon: file-certificate
+          href: license.qmd
+        - icon: github
+          href: https://github.com/rstudio-conf-2022/ggplot2-graphic-design
+          text: GitHub
+        #- icon: cloud-fill
+        #  href: https://rstudio.cloud/spaces/235465
+        #  text: RStudio Cloud+
+      left:
+        - text: Sessions
+          menu: 
+            - text: Introduction
+              href: modules/d1-01_introduction.qmd
+        - href: schedule.qmd
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    mainfont: "Cabinet Grotesk"

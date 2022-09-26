@@ -1,0 +1,310 @@
+[
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "Spatial predictive models with R",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\nUnderstanding the general concepts of ggplot2.\nLearning the many options of customizing a ggplot.\nGaining the major steps need to create engaging graphics.\nBeing able to generate complex plots without the need of post-processing."
+  },
+  {
+    "objectID": "index.html#is-this-course-for-me",
+    "href": "index.html#is-this-course-for-me",
+    "title": "Spatial predictive models with R",
+    "section": "Is this course for me?",
+    "text": "Is this course for me?\nThis course will be appropriate for you if you answer yes to these questions:\n\nDo you aim to build graphics in a fully reproducible way without the need to manually adjust details afterwards?\nDo you enjoy using the {ggplot2} package but are interested in doing more with it?\nWould you like to learn how to improve future data visualizations in terms of accessibility, impact, and complexity?"
+  },
+  {
+    "objectID": "index.html#required-packages",
+    "href": "index.html#required-packages",
+    "title": "Spatial predictive models with R",
+    "section": "Required Packages",
+    "text": "Required Packages\n\ntidyverse packages and friends\n\nggplot2, readr, tibble, dplyr, tidyr, forcats, stringr, lubridate, here, systemfonts, scales\n\nextension packages\n\nggrepel, ggforce, ggtext, ggdist, ggbeeswarm, gghalves, ggblur, patchwork\n\ncolor packages\n\nviridis, RColorBrewer, rcartocolor, scico, ggsci, ggthemes, nord, MetBrewer, colorspace, colorblindr\n\nutil packages\n\nmagick, grid, grDevices\n\ndata packages\n\npalmerpenguins, rnaturalearth\n\nrspatial packages\n\nsf, rmapshaper\n\n\nRun this code to install the packages if needed:\npackages <- c(\n  \"ggplot2\", \"readr\", \"tibble\", \"tidyr\", \"forcats\", \"stringr\",\n  \"lubridate\", \"here\", \"systemfonts\", \"magick\", \"scales\", \"grid\",\n  \"grDevices\", \"colorspace\", \"viridis\", \"RColorBrewer\", \"rcartocolor\",\n  \"scico\", \"ggsci\", \"ggthemes\", \"nord\", \"MetBrewer\", \"ggrepel\",\n  \"ggforce\", \"ggtext\", \"ggdist\", \"ggbeeswarm\", \"gghalves\", \"patchwork\", \n  \"palmerpenguins\", \"rnaturalearth\", \"sf\", \"rmapshaper\", \"devtools\"\n)\n\ninstall.packages(setdiff(packages, rownames(installed.packages())))  \n\n## install {colorblindr} and requirements\nremotes::install_github(\"wilkelab/cowplot\")\nremotes::install_github(\"clauswilke/colorblindr\")"
+  },
+  {
+    "objectID": "index.html#required-typefaces",
+    "href": "index.html#required-typefaces",
+    "title": "Spatial predictive models with R",
+    "section": "Required Typefaces",
+    "text": "Required Typefaces\nWe will make use of custom fonts. A lot.\nIf you want to follow all contents locally, make sure the following typefaces are installed:\n\nRoboto Condensed: fonts.google.com/specimen/Roboto+Condensed\nCabinet Grotesk: fontshare.com/fonts/cabinet-grotesk\nTabular: fontshare.com/fonts/tabular\nBoska: fontshare.com/fonts/boska\nPally: fontshare.com/fonts/pally\n\nYou can download all typefaces as a single zip file here."
+  },
+  {
+    "objectID": "modules/d1-01_introduction.html",
+    "href": "modules/d1-01_introduction.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "View slides in full screen\n\nOutline\n\nWelcome\n\nMeet the Team\nMeat Each Other\nAnnouncements\n\nThe {ggplot2} Package\n\nAdvantages of {ggplot2}\nThe {ggplot2} Showcase\nA Motivational Example"
+  },
+  {
+    "objectID": "modules/d1-02_concepts_pt1.html",
+    "href": "modules/d1-02_concepts_pt1.html",
+    "title": "Concepts of the {ggplot2} Package Pt. 1",
+    "section": "",
+    "text": "View slides in full screen | Run the code yourself"
+  },
+  {
+    "objectID": "modules/d1-02_concepts_pt1.html#exercise-1",
+    "href": "modules/d1-02_concepts_pt1.html#exercise-1",
+    "title": "Concepts of the {ggplot2} Package Pt. 1",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\n\nOpen the script exercises/02_concepts_pt1_ex1.qmd (or the .rmd).\nExplore the TfL bike share data visually:create a timeseries of reported bike shares on weekend days\n\nHighlight day and night encoded by colors and shapes.\nConnect the points of each period with lines.\nQuestion: What is the difference between geom_line() and geom_path()?\nApply your favorite theme to the plot.\nAdd meaningful labels.\n\nSave the plot as a vector graphic with a decent plot size.\n\n\n→ Solution"
+  },
+  {
+    "objectID": "modules/d1-02_concepts_pt1.html#exercise-2",
+    "href": "modules/d1-02_concepts_pt1.html#exercise-2",
+    "title": "Concepts of the {ggplot2} Package Pt. 1",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\n\nOpen the script exercises/02_concepts_pt1_ex2.qmd (or the .rmd).\nExplore the TfL bike sharing data visually:create a boxplot of counts per weather type\n\nTurn the plot into a jitter strips plot (random noise across the x axis)\nCombine both chart types (jittered points on top of the boxplots)\nBonus: Sort the boxplot-jitter hybrid by median counts\nApply your favorite theme to the plot.\nAdd meaningful labels.\nBonus: Explore other chart types to visualize the distributions.\n\nSave the plot as a vector graphic with a decent plot size.\n\n\n→ Solution"
+  },
+  {
+    "objectID": "modules/d1-03_coffee_break.html",
+    "href": "modules/d1-03_coffee_break.html",
+    "title": "Coffee Break",
+    "section": "",
+    "text": "If you have questions during the break please come to any of the TAs."
+  },
+  {
+    "objectID": "modules/d1-04_concepts_p1_cont.html",
+    "href": "modules/d1-04_concepts_p1_cont.html",
+    "title": "Concepts of the {ggplot2} Package Pt. 1 (Continued)",
+    "section": "",
+    "text": "View slides in full screen | Run the code yourself"
+  },
+  {
+    "objectID": "modules/d1-04_concepts_p1_cont.html#exercise-1",
+    "href": "modules/d1-04_concepts_p1_cont.html#exercise-1",
+    "title": "Concepts of the {ggplot2} Package Pt. 1 (Continued)",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\n\nOpen the script exercises/02_concepts_pt1_ex1.qmd (or the .rmd).\nExplore the TfL bike share data visually:create a timeseries of reported bike shares on weekend days\n\nHighlight day and night encoded by colors and shapes.\nConnect the points of each period with lines.\nQuestion: What is the difference between geom_line() and geom_path()?\nApply your favorite theme to the plot.\nAdd meaningful labels.\n\nSave the plot as a vector graphic with a decent plot size.\n\n\n→ Solution"
+  },
+  {
+    "objectID": "modules/d1-04_concepts_p1_cont.html#exercise-2",
+    "href": "modules/d1-04_concepts_p1_cont.html#exercise-2",
+    "title": "Concepts of the {ggplot2} Package Pt. 1 (Continued)",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\n\nOpen the script exercises/02_concepts_pt1_ex2.qmd (or the .rmd).\nExplore the TfL bike sharing data visually:create a boxplot of counts per weather type\n\nTurn the plot into a jitter strips plot (random noise across the x axis)\nCombine both chart types (jittered points on top of the boxplots)\nBonus: Sort the boxplot-jitter hybrid by median counts\nApply your favorite theme to the plot.\nAdd meaningful labels.\nBonus: Explore other chart types to visualize the distributions.\n\nSave the plot as a vector graphic with a decent plot size.\n\n\n→ Solution"
+  },
+  {
+    "objectID": "modules/d1-05_concepts_pt2.html",
+    "href": "modules/d1-05_concepts_pt2.html",
+    "title": "Concepts of the {ggplot2} Package Pt. 2",
+    "section": "",
+    "text": "View slides in full screen | Run the code yourself"
+  },
+  {
+    "objectID": "modules/d1-05_concepts_pt2.html#exercise-1",
+    "href": "modules/d1-05_concepts_pt2.html#exercise-1",
+    "title": "Concepts of the {ggplot2} Package Pt. 2",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\n\nOpen the script exercises/03_concepts_pt2_ex1.qmd (or the .rmd).\nHave a look at the visualization in the folder exercises/3-1-astronaut-viz that shows the cumulative time that cosmo- and astronauts have spent in outer space. The data also contains information on the year of their first and last travel, respectively.\n\nTogether with your group, discuss which layers and modifications are needed to create such a chart with {ggplot2}.\nNote down the aesthetics, geometries, and scales used for each element of this graphic.\nWhat is the coordinate system? Have any adjustments been made?\nWhich theme was used and how was it modified?\n\n\n\n→ Solution"
+  },
+  {
+    "objectID": "modules/d1-05_concepts_pt2.html#exercise-2",
+    "href": "modules/d1-05_concepts_pt2.html#exercise-2",
+    "title": "Concepts of the {ggplot2} Package Pt. 2",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\n\nOpen the script exercises/03_concepts_pt2_ex2.qmd (or the .rmd).\nCreate a circular lollipop plot of reported bike shares per season.\nThe data is not in the right format as there are no totals. How can you solve it?\nRemove all legend elements (with a single line of code).\nHow can you add the labels next to the starting point of each lollipop?\nHow could you add a baseline?\n\n\n→ Solution"
+  },
+  {
+    "objectID": "modules/d1-06_lunch_break.html",
+    "href": "modules/d1-06_lunch_break.html",
+    "title": "Lunch Break",
+    "section": "",
+    "text": "Warning\n\n\n\nPlease avoid questions during the breaks to give us a chance to recover and reflect - anything other than course material is however strongly encouraged! 😋"
+  },
+  {
+    "objectID": "modules/d1-07_concepts_pt2_cont.html",
+    "href": "modules/d1-07_concepts_pt2_cont.html",
+    "title": "Concepts of the {ggplot2} Package Pt. 2 (Continued)",
+    "section": "",
+    "text": "View slides in full screen | Run the code yourself"
+  },
+  {
+    "objectID": "modules/d1-07_concepts_pt2_cont.html#exercise-1",
+    "href": "modules/d1-07_concepts_pt2_cont.html#exercise-1",
+    "title": "Concepts of the {ggplot2} Package Pt. 2 (Continued)",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\n\nOpen the script exercises/03_concepts_pt2_ex1.qmd (or the .rmd).\nHave a look at the visualization in the folder exercises/3-1-astronaut-viz that shows the cumulative time that cosmo- and astronauts have spent in outer space. The data also contains information on the year of their first and last travel, respectively.\n\nTogether with your group, discuss which layers and modifications are needed to create such a chart with {ggplot2}.\nNote down the aesthetics, geometries, and scales used for each element of this graphic.\nWhat is the coordinate system? Have any adjustments been made?\nWhich theme was used and how was it modified?\n\n\n\n→ Solution"
+  },
+  {
+    "objectID": "modules/d1-07_concepts_pt2_cont.html#exercise-2",
+    "href": "modules/d1-07_concepts_pt2_cont.html#exercise-2",
+    "title": "Concepts of the {ggplot2} Package Pt. 2 (Continued)",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\n\nOpen the script exercises/03_concepts_pt2_ex2.qmd (or the .rmd).\nCreate a circular lollipop plot of reported bike shares per season.\nThe data is not in the right format as there are no totals. How can you solve it?\nRemove all legend elements (with a single line of code).\nHow can you add the labels next to the starting point of each lollipop?\nHow could you add a baseline?\n\n\n→ Solution"
+  },
+  {
+    "objectID": "modules/d1-08_coffee_break.html",
+    "href": "modules/d1-08_coffee_break.html",
+    "title": "Coffee Break",
+    "section": "",
+    "text": "Coffee and refreshments served at …\nIf you have questions during the break …"
+  },
+  {
+    "objectID": "modules/d1-09_data_com.html",
+    "href": "modules/d1-09_data_com.html",
+    "title": "Data Communication",
+    "section": "",
+    "text": "View slides in full screen\n\nOutline\n\nVisualize Your Data\n\nAnscombe’s Quartet\nDatasaurus Dozen\nWhat Makes it a Good Data Viualization?\n\nInformation\n\nAvoid Data Pitfalls\n\nStory\n\nWho is My Audience?\n\nGoal\n\nTypology of Information Graphics\nThe Vertices of Visualization\nBeyond Bar and Line Graphs\nChart Choice Helpers\nThe Power of Small Multiples\n\nVisual Form\n\nWhat is Good Data Visualization Design?\nOrder Your Data\nDon’t Rotate Your Text\nAdd Direct Labels\nUse Colors and Annotations Wisely\nThe Power of Annotations\n\n\n\n\nRecap\n\n\nVisualizing data is helpful to gain insights and discover anomalies\nThe design process of data visualizations can be broken down to 4 levels:\n\nInformation: understand the data and be accurate\nStory: be clear about the message of the visualization\nGoal: select charts that successfully transport the story\nVisual form: follow design rules and data visualization principles\n\n\n\n\n\nExercises\n\n\nExercise 1\n\n\nWe form groups and each group gets a number between 1 and 10.\nOpen the image file(s) with the according number in the folder exercises/4-1-data-communication\n\nDiscuss the visualization with regard to the 4 levels of data visualization design.\nOverall, do you think it is a good or a bad visualization?\nWhat are details you like?\nHow could one improve the chart?\nIs there another (potentially better) way to tell the story? Sketch it (and think about how you could build it with ggplot2)"
+  },
+  {
+    "objectID": "modules/d2-01_lab_ann.html",
+    "href": "modules/d2-01_lab_ann.html",
+    "title": "Working with Labels and Annotations",
+    "section": "",
+    "text": "View slides in full screen | Run the code yourself"
+  },
+  {
+    "objectID": "modules/d2-01_lab_ann.html#exercise-1",
+    "href": "modules/d2-01_lab_ann.html#exercise-1",
+    "title": "Working with Labels and Annotations",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\n\n{ggtext} also comes with some new geom’s. Explore those and other options on the package webpage: wilkelab.rg/ggtext.\nOpen the script exercises/05_labels_ex1.qmd (or the .rmd).\nCreate the following visualization, as close as possible, with the penguins dataset which is provided by the {palmerpenguins} package: \n\nFor the species labels, you likely have to create a summary data set.\nUse the {ggtext} geometries and theme elements to format the labels.\nAlso, make use of the other components such as scales, complete themes, and theme customization.\n\n\n\n→ Solution"
+  },
+  {
+    "objectID": "modules/d2-01_lab_ann.html#exercise-2",
+    "href": "modules/d2-01_lab_ann.html#exercise-2",
+    "title": "Working with Labels and Annotations",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\n\nOpen the script exercises/05_labels_ex2.qmd (or the .rmd).\nCreate the logo in exercises/5-2-logo with the image file exercises/img/rstudioconf-washington-bg.png for the skyline:\n\n\n→ Solution"
+  },
+  {
+    "objectID": "modules/d2-02_coffee_break.html",
+    "href": "modules/d2-02_coffee_break.html",
+    "title": "Coffee Break",
+    "section": "",
+    "text": "If you have questions during the break please come to any of the TAs."
+  },
+  {
+    "objectID": "modules/d2-03_colorful_graphics.html",
+    "href": "modules/d2-03_colorful_graphics.html",
+    "title": "Colorful Graphics",
+    "section": "",
+    "text": "View slides in full screen\n\nOutline\n\nChannels to Encode Information\nColor Spaces\nColor Palette Choice\nUse Color Wisely (and Correctly)\nDesigning for Colorblindness\nBeyond the Rainbow\n\n\n\nRecap\n\n\nPick the right palette type for your visualization\n\nuse sequential to encode numerical information with order\nuse diverging to encode numerical information with a critical midpoint\nuse quialitative to encode categorical information\n\nmap the color with the highest contrast of a sequential palette to the most important value\nfor categories use a maximum of 6-8 colors\ntest for color blindness using a CVD simulator\ncheck the contrast of your data and text colors\navoid rainbow palettes!"
+  },
+  {
+    "objectID": "modules/d2-04_colors.html",
+    "href": "modules/d2-04_colors.html",
+    "title": "Working with Colors",
+    "section": "",
+    "text": "View slides in full screen | Run the code yourself\n\nOutline\n\nColor Palettes\n\nPre-Defined Color Palettes: Viridis\nPre-Defined Color Palettes: Brewer\n{rcartocolor}\n{scico}\n{ggsci} and {ggthemes}\n{nord}\n{MetBrewer}\n\nCustomize Palettes\n\nCustomize Existing Palettes\n\nCreate New Palettes\n\nCreate Sequential Palettes\nCreate Diverging Palettes\nCreate Any Palette\n\nHCL Spectrum\n\nEvaluate HCL Spectrum\n\nTest Your Palettes\n\nEmulate CVD\n\n\n\n\nRecap\n\n\nuse categorical palettes for qualitative data\n\ne.g. scale_*_discrete() and scale_*_manual() for custom options\ne.g. scale_*_viridis_d and scale_*_brewer() for pre-defined options\n\nuse sequential or diverging palettes for quantitative data\n\ne.g. scale_*_gradient() or scale_*_gradient2() for custom options\ne.g. scale_*_viridis_c and scale_*_distiller() for pre-defined options\n\nvarious packages provide palettes incl. scale_* components\n\ne.g. {rcartocolors}, {scico}, {ggsci}, {ggthemes}, {nord}\n\nthose and even more packages return palettes as vectors\n\nmodify and supply them to scale_*_manual() and scale_*_gradientn()\n\nuse after_scale to modify and recycle color scales\n\n\n\n\nExercise\n\n\nOpen the script exercises/06_colors_ex1.qmd (or the .rmd).\nCreate a similar visualization as the one in the folder exercises/7-1-bikes-jitter\n\n\n→ Solution"
+  },
+  {
+    "objectID": "modules/d2-05_lunch_break.html",
+    "href": "modules/d2-05_lunch_break.html",
+    "title": "Lunch Break",
+    "section": "",
+    "text": "Warning\n\n\n\nPlease avoid questions during the breaks to give us a chance to recover and reflect - anything other than course material is however strongly encouraged! 😋"
+  },
+  {
+    "objectID": "modules/d2-06_layout.html",
+    "href": "modules/d2-06_layout.html",
+    "title": "Working with Layouts and Composition",
+    "section": "",
+    "text": "View slides in full screen | Run the code yourself\n\nOutline\n\nLegend Placement and Styling\n\nDiscrete Legend\nContinuous Legend\nLegend Position\nLegend Justification\nLegend Direction\nLegend Types\nLegend Styling\nKey Glyphs\n\nComposing ggplot’s\n\nThe “Monsters” Example\n{patchwork}\nApply Theming\nAdjust Widths and Heights\nUse a Custom Layout\nAdd Labels\nAdd Text\nAdd Inset Plots\n\nMore Legend Styling\n\nLegend with Color Shading\nLegend on Top\nResort Legend\n\n\n\n\nRecap\n\n\nguides are the combination of scales and legends\nlegends can be either modified with the guide_* function in scale_*() or guides() and with the theme() component qualitative\n… while quantitative guides are colorbar, colorsteps or bins\n{patchwork} is the most modern and simplest way to compose plots\n\nuse +, / and | to combine plots\nuse plot_layout() to adjust the layout, widths and heights\nuse plot_annotation() to add tags and general labels\nuse inset_element() to add inset graphics"
+  },
+  {
+    "objectID": "modules/d2-07_coffee_break.html",
+    "href": "modules/d2-07_coffee_break.html",
+    "title": "Coffee Break",
+    "section": "",
+    "text": "If you have questions during the break please come to any of the TAs."
+  },
+  {
+    "objectID": "modules/d2-08_project.html",
+    "href": "modules/d2-08_project.html",
+    "title": "Group Projects",
+    "section": "",
+    "text": "View slides in full screen | Get the data sets\n\nOutline\n\nCarbon Footprint of Travel (OWID / UK.gov)\nSpendings COVID Pandemic (JP Morgan Chase)\nSpeed of Languages (Economist / Coupé et al.)\nUS Drought Patterns (Drought Monitor)\n\n\n\nExercise\n\n\nForm groups and work one of the following suggested projects:\n\nCarbon Footprint of Travel (OWID / UK.gov)\nSpending Before and During the Pandemic (JP Morgan Chase)\nSpeed of Languages (Economist / Coupé et al.)\nUS Drought Patterns (Drought Monitor)\n\n\n\n→ Potential Solutions"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Monday, July 25, 2022\n\n\n\n\n\n\n\n\nTime\n\n\nModule\n\n\n\n\n\n\n\n\n\n09:00-09:30\n\n\nIntroduction\n\n\n\n\n\n\n\n09:00-09:30\n\n\nIntroduction\n\n\n\n\n\n\n\n09:30-10:30\n\n\nConcepts of the {ggplot2} Package Pt. 1\n\n\n\n\n\n\n\n10:30-11:00\n\n\nCoffee Break\n\n\n\n\n\n\n\n11:00-12:00\n\n\nConcepts of the {ggplot2} Package Pt. 1 (Continued)\n\n\n\n\n\n\n\n12:00-12:30\n\n\nConcepts of the {ggplot2} Package Pt. 2\n\n\n\n\n\n\n\n12:30-13:30\n\n\nLunch Break\n\n\n\n\n\n\n\n13:30-15:00\n\n\nConcepts of the {ggplot2} Package Pt. 2 (Continued)\n\n\n\n\n\n\n\n15:00-15:30\n\n\nCoffee Break\n\n\n\n\n\n\n\n15:30-17:00\n\n\nData Communication\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "schedule.html#day-2",
+    "href": "schedule.html#day-2",
+    "title": "Schedule",
+    "section": "Day 2",
+    "text": "Day 2\nTuesday, July 26, 2022\n\n\n\n\n\n\n\n\nTime\n\n\nModule\n\n\n\n\n\n\n\n\n\n09:00-10:30\n\n\nWorking with Labels and Annotations\n\n\n\n\n\n\n\n10:30-11:00\n\n\nCoffee Break\n\n\n\n\n\n\n\n11:00-11:30\n\n\nColorful Graphics\n\n\n\n\n\n\n\n11:30-12:30\n\n\nWorking with Colors\n\n\n\n\n\n\n\n12:30-13:30\n\n\nLunch Break\n\n\n\n\n\n\n\n13:30-15:00\n\n\nWorking with Layouts and Composition\n\n\n\n\n\n\n\n15:00-15:30\n\n\nCoffee Break\n\n\n\n\n\n\n\n15:30-17:00\n\n\nGroup Projects\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "team.html",
+    "href": "team.html",
+    "title": "Teaching Team",
+    "section": "",
+    "text": "Cédric Scherer :twitter: @CedScherer\n\n\nChristine Jin :linkedin: https://www.linkedin.com/in/jinchristine/\n\n\nThomas Lin Pedersen :twitter: @thomasp85\n\n\nAhmadou Dicko :twitter: @dickoah\n\n\nMarco Sciaini :twitter: @shinysci\n\n\nHassan Kibirige :twitter: @HKibirige"
+  },
+  {
+    "objectID": "ggplot2-graphic-design/modules/d1-01_introduction.html",
+    "href": "ggplot2-graphic-design/modules/d1-01_introduction.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "View slides in full screen\n\nOutline\n\nWelcome\n\nMeet the Team\nMeat Each Other\nAnnouncements\n\nThe {ggplot2} Package\n\nAdvantages of {ggplot2}\nThe {ggplot2} Showcase\nA Motivational Example"
+  },
+  {
+    "objectID": "ggplot2-graphic-design/schedule.html",
+    "href": "ggplot2-graphic-design/schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Monday, July 25, 2022\n\n\n\n\n\n\n\n\nTime\n\n\nModule\n\n\n\n\n\n\n\n\n\n09:00-09:30\n\n\nIntroduction\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "ggplot2-graphic-design/schedule.html#day-2",
+    "href": "ggplot2-graphic-design/schedule.html#day-2",
+    "title": "Schedule",
+    "section": "Day 2",
+    "text": "Day 2\nTuesday, July 26, 2022\n\n\n\n\n\n\n\n\nTime\n\n\nModule\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "ggplot2-graphic-design/team.html",
+    "href": "ggplot2-graphic-design/team.html",
+    "title": "Teaching Team",
+    "section": "",
+    "text": "Cédric Scherer :twitter: @CedScherer\n\n\nChristine Jin :linkedin: https://www.linkedin.com/in/jinchristine/\n\n\nThomas Lin Pedersen :twitter: @thomasp85\n\n\nAhmadou Dicko :twitter: @dickoah\n\n\nMarco Sciaini :twitter: @shinysci\n\n\nHassan Kibirige :twitter: @HKibirige"
+  },
+  {
+    "objectID": "materials/01_introduction.html#conversation-starters",
+    "href": "materials/01_introduction.html#conversation-starters",
+    "title": "Graphic Design with ggplot2",
+    "section": "Conversation Starters",
+    "text": "Conversation Starters\n\nWhat’s your name?\nWhere do you feel home?\nWhen did you use R for the first time?\nWhat’s your favorite animal / plant / color / typeface?\nWhom would you like to meet during the rstudio::conf?\nWhich R package are you looking forward to try?"
+  },
+  {
+    "objectID": "materials/01_introduction.html#announcements",
+    "href": "materials/01_introduction.html#announcements",
+    "title": "Graphic Design with ggplot2",
+    "section": "Announcements",
+    "text": "Announcements\nWiFi\n\nUsername: conf22\nPassword: together!\n\nCourse Materials\n\nWebpage: rstudio-conf-2022.github.io/ggplot2-graphic-design\nRstudio Cloud: rstudio.cloud/spaces/235465"
+  },
+  {
+    "objectID": "materials/01_introduction.html#announcements-1",
+    "href": "materials/01_introduction.html#announcements-1",
+    "title": "Graphic Design with ggplot2",
+    "section": "Announcements",
+    "text": "Announcements\n\n\ngender neutral bathrooms by the National Harbor rooms\nmeditation room is located at National Harbor 9, open 8am-5pm, Monday-Thursday\nthere is also has a dedicated room behind the reception\nlactation room is located at Potomac Dressing Room, open 8am-5pm, Monday-Thursday.\nparticipants with red lanyards wish to be not photographed, please note everyone’s lanyard colors before taking a photo\nThe Code of Conduct and COVID policies can be found at rstudio.com/conference/2022/2022-conf-code-of-conduct,please review them carefully"
+  },
+  {
+    "objectID": "materials/01_introduction.html#communication-strategy",
+    "href": "materials/01_introduction.html#communication-strategy",
+    "title": "Graphic Design with ggplot2",
+    "section": "Communication Strategy",
+    "text": "Communication Strategy\n\n\n\nGreen sticky note — I am done with the exercise\nPink sticky note — I need help or support\nYou can ask questions / comment at any time during the course.\nPlease avoid questions during the breaks to give us a chance to recover and reflect.\nTeam up with your neighbors for exercises — and lunch!\nWe will collect feedback twice during the day (more later)."
+  },
+  {
+    "objectID": "materials/01_introduction.html#section-16",
+    "href": "materials/01_introduction.html#section-16",
+    "title": "Graphic Design with ggplot2",
+    "section": "",
+    "text": "{ggplot2} package description\n\n\n\n{ggplot2} is a system for declaratively creating graphics,based on “The Grammar of Graphics” (Wilkinson, 2005).\n\nYou provide the data, tell {ggplot2} how tomap variables to aesthetics,what graphical primitives to use, and it takes care of the details."
+  },
+  {
+    "objectID": "materials/01_introduction.html#advantages-of-ggplot2",
+    "href": "materials/01_introduction.html#advantages-of-ggplot2",
+    "title": "Graphic Design with ggplot2",
+    "section": "Advantages of {ggplot2}",
+    "text": "Advantages of {ggplot2}\n\n\nconsistent underlying “grammar of graphics” (Wilkinson 2005)\n\nvery flexible, layered plot specification\n\ntheme system for polishing plot appearance\n\nlots of additional functionality thanks to extensions\n\nactive and helpful community"
+  }
+]
