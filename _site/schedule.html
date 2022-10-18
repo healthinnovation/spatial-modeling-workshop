@@ -36,16 +36,18 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -71,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-image','listing-subtitle','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author"],
+      searchColumns: [],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -99,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-image','listing-subtitle','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author"],
+      searchColumns: [],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -119,20 +121,111 @@ ul.task-list li input[type="checkbox"] {
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<meta property="og:title" content="Graphic Design with ggplot2 - Schedule">
+<meta property="og:description" content="Monday, July 25, 2022">
+<meta property="og:site-name" content="Graphic Design with ggplot2">
 <meta name="twitter:title" content="Graphic Design with ggplot2 - Schedule">
 <meta name="twitter:description" content="Monday, July 25, 2022">
-<meta name="twitter:image" content="https://rstudio-conf-2022.github.io/ggplot2-graphic-design//images/twitter-card.png">
-<meta name="twitter:creator" content="@CedScherer">
-<meta name="twitter:image-height" content="679">
+<meta name="twitter:image" content="/images/twitter-card.png">
+<meta name="twitter:creator" content="@antony_barja">
+<meta name="twitter:image-height" content="599">
 <meta name="twitter:image-width" content="1200">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body>
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/ggplot2.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Graphic Design with ggplot2</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./installation.html">Installation</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-demos" role="button" data-bs-toggle="dropdown" aria-expanded="false">Demos</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-demos">    
+        <li>
+    <a class="dropdown-item" href="./example01.html">
+ <span class="dropdown-text">Example 01</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./example02.html">
+ <span class="dropdown-text">Example 02</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
+        <li>
+    <a class="dropdown-item" href="https://geocompr.robinlovelace.net/">
+ <span class="dropdown-text">Geocomputation with R</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://r-spatial.org/book/">
+ <span class="dropdown-text">Spatial Data Science</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://sdesabbata.github.io/r-for-geographic-data-science/">
+ <span class="dropdown-text">R for Geographic Data Science</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/rstudio-conf-2022/ggplot2-graphic-design"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/rstudio-conf-2022/ggplot2-graphic-design"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="./https"><i class="bi bi-instagram" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="./https"><i class="bi bi-linkedin" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="./https"><i class="bi bi-facebook" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -143,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#day-1" id="toc-day-1" class="nav-link active" data-scroll-target="#day-1">Day 1</a></li>
   <li><a href="#day-2" id="toc-day-2" class="nav-link" data-scroll-target="#day-2">Day 2</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-conf-2022/ggplot2-graphic-design/edit/main/schedule.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/rstudio-conf-2022/ggplot2-graphic-design/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ambarja/website-quarto-template/edit/main/schedule.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/ambarja/website-quarto-template/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -164,12 +257,12 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="day-1" class="level2">
-<h2 class="anchored" data-anchor-id="day-1">Day 1</h2>
+<section id="day-1" class="level1">
+<h1>Day 1</h1>
 <p>Monday, July 25, 2022</p>
 <div id="listing-schedule-day1" class="quarto-listing quarto-listing-container-table">
 
-<table class="quarto-listing-table table table-hover">
+<table class="quarto-listing-table table">
 <thead>
 <tr>
 <th>
@@ -183,126 +276,6 @@ Module
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1658725200000" data-listing-file-modified-sort="1664045551021" data-listing-reading-time-sort="0.365" data-listing-title-sort="Introduction" data-listing-filename-sort="d1-01_introduction.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./ggplot2-graphic-design/modules/images/session1.png" style="height: 40px;">
-</td>
-<td class="listing-subtitle">
-<span class="code">09:00-09:30</span>
-</td>
-<td class="listing-title">
-<a href="./ggplot2-graphic-design/modules/d1-01_introduction.html" class="title">Introduction</a>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1658725200000" data-listing-file-modified-sort="1664037511697" data-listing-reading-time-sort="0.365" data-listing-title-sort="Introduction" data-listing-filename-sort="d1-01_introduction.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./modules/images/session1.png" style="height: 40px;">
-</td>
-<td class="listing-subtitle">
-<span class="code">09:00-09:30</span>
-</td>
-<td class="listing-title">
-<a href="./modules/d1-01_introduction.html" class="title">Introduction</a>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1658725200000" data-listing-file-modified-sort="1664037511707" data-listing-reading-time-sort="3.39" data-listing-title-sort="<span>Concepts of the <code>{ggplot2}</code> Package Pt. 1</span>" data-listing-filename-sort="d1-02_concepts_pt1.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./modules/images/session2.png" style="height: 40px;">
-</td>
-<td class="listing-subtitle">
-<span class="code">09:30-10:30</span>
-</td>
-<td class="listing-title">
-<a href="./modules/d1-02_concepts_pt1.html" class="title"><span>Concepts of the <code>{ggplot2}</code> Package Pt. 1</span></a>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1658725200000" data-listing-file-modified-sort="1664037511710" data-listing-reading-time-sort="0.07" data-listing-title-sort="Coffee Break" data-listing-filename-sort="d1-03_coffee_break.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./modules/images/coffee-break.png" style="height: 40px;" alt="A coffee cup.">
-</td>
-<td class="listing-subtitle">
-<span class="code" style="color:#b3b3b3;">10:30-11:00</span>
-</td>
-<td class="listing-title">
-<a href="./modules/d1-03_coffee_break.html" class="title">Coffee Break</a>
-</td>
-</tr>
-<tr data-index="4" data-listing-date-sort="1658725200000" data-listing-file-modified-sort="1664037511717" data-listing-reading-time-sort="3.39" data-listing-title-sort="<span>Concepts of the <code>{ggplot2}</code> Package Pt. 1 <span style='font-weight:500;'>(Continued)</span></span>" data-listing-filename-sort="d1-04_concepts_p1_cont.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./modules/images/session2.png" style="height: 40px;">
-</td>
-<td class="listing-subtitle">
-<span class="code">11:00-12:00</span>
-</td>
-<td class="listing-title">
-<a href="./modules/d1-04_concepts_p1_cont.html" class="title"><span>Concepts of the <code>{ggplot2}</code> Package Pt. 1 <span style="font-weight:500;">(Continued)</span></span></a>
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1658725200000" data-listing-file-modified-sort="1664037511720" data-listing-reading-time-sort="2.84" data-listing-title-sort="<span>Concepts of the <code>{ggplot2}</code> Package Pt. 2</span>" data-listing-filename-sort="d1-05_concepts_pt2.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./modules/images/session3.png" style="height: 40px;">
-</td>
-<td class="listing-subtitle">
-<span class="code">12:00-12:30</span>
-</td>
-<td class="listing-title">
-<a href="./modules/d1-05_concepts_pt2.html" class="title"><span>Concepts of the <code>{ggplot2}</code> Package Pt. 2</span></a>
-</td>
-</tr>
-<tr data-index="6" data-listing-date-sort="1658725200000" data-listing-file-modified-sort="1664037511721" data-listing-reading-time-sort="0.135" data-listing-title-sort="Lunch Break" data-listing-filename-sort="d1-06_lunch_break.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./modules/images/lunch-break.png" style="height: 40px;" alt="Plate and utensils.">
-</td>
-<td class="listing-subtitle">
-<span class="code" style="color:#b3b3b3;">12:30-13:30</span>
-</td>
-<td class="listing-title">
-<a href="./modules/d1-06_lunch_break.html" class="title">Lunch Break</a>
-</td>
-</tr>
-<tr data-index="7" data-listing-date-sort="1658725200000" data-listing-file-modified-sort="1664037511721" data-listing-reading-time-sort="2.81" data-listing-title-sort="<span>Concepts of the <code>{ggplot2}</code> Package Pt. 2 <span style='font-weight:500;'>(Continued)</span>" data-listing-filename-sort="d1-07_concepts_pt2_cont.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./modules/images/session3.png" style="height: 40px;">
-</td>
-<td class="listing-subtitle">
-<span class="code">13:30-15:00</span>
-</td>
-<td class="listing-title">
-<a href="./modules/d1-07_concepts_pt2_cont.html" class="title"><span>Concepts of the <code>{ggplot2}</code> Package Pt. 2 <span style="font-weight:500;">(Continued)</span></span></a>
-</td>
-</tr>
-<tr data-index="8" data-listing-date-sort="1658725200000" data-listing-file-modified-sort="1664037511722" data-listing-reading-time-sort="0.065" data-listing-title-sort="Coffee Break" data-listing-filename-sort="d1-08_coffee_break.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./modules/images/coffee-break.png" style="height: 40px;" alt="A coffee cup.">
-</td>
-<td class="listing-subtitle">
-<span class="code" style="color:#b3b3b3;">15:00-15:30</span>
-</td>
-<td class="listing-title">
-<a href="./modules/d1-08_coffee_break.html" class="title">Coffee Break</a>
-</td>
-</tr>
-<tr data-index="9" data-listing-date-sort="1658725200000" data-listing-file-modified-sort="1664037511724" data-listing-reading-time-sort="2" data-listing-title-sort="Data Communication" data-listing-filename-sort="d1-09_data_com.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./modules/images/session4.png" style="height: 40px;">
-</td>
-<td class="listing-subtitle">
-<span class="code">15:30-17:00</span>
-</td>
-<td class="listing-title">
-<a href="./modules/d1-09_data_com.html" class="title">Data Communication</a>
-</td>
-</tr>
 </tbody>
 
 </table>
@@ -311,12 +284,12 @@ No matching items
 </div>
 </div>
 </section>
-<section id="day-2" class="level2">
-<h2 class="anchored" data-anchor-id="day-2">Day 2</h2>
+<section id="day-2" class="level1">
+<h1>Day 2</h1>
 <p>Tuesday, July 26, 2022</p>
 <div id="listing-schedule-day2" class="quarto-listing quarto-listing-container-table">
 
-<table class="quarto-listing-table table table-hover">
+<table class="quarto-listing-table table">
 <thead>
 <tr>
 <th>
@@ -330,102 +303,6 @@ Module
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1658811600000" data-listing-file-modified-sort="1664037511725" data-listing-reading-time-sort="2.585" data-listing-title-sort="Working with Labels and Annotations" data-listing-filename-sort="d2-01_lab_ann.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./modules/images/session5.png" style="height: 40px;">
-</td>
-<td class="listing-subtitle">
-<span class="code">09:00-10:30</span>
-</td>
-<td class="listing-title">
-<a href="./modules/d2-01_lab_ann.html" class="title">Working with Labels and Annotations</a>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1658811600000" data-listing-file-modified-sort="1664037511730" data-listing-reading-time-sort="0.07" data-listing-title-sort="Coffee Break" data-listing-filename-sort="d2-02_coffee_break.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./modules/images/coffee-break.png" style="height: 40px;" alt="A coffee cup.">
-</td>
-<td class="listing-subtitle">
-<span class="code" style="color:#b3b3b3;">10:30-11:00</span>
-</td>
-<td class="listing-title">
-<a href="./modules/d2-02_coffee_break.html" class="title">Coffee Break</a>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1658811600000" data-listing-file-modified-sort="1664037511731" data-listing-reading-time-sort="0.765" data-listing-title-sort="Colorful Graphics" data-listing-filename-sort="d2-03_colorful_graphics.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./modules/images/session6.png" style="height: 40px;">
-</td>
-<td class="listing-subtitle">
-<span class="code">11:00-11:30</span>
-</td>
-<td class="listing-title">
-<a href="./modules/d2-03_colorful_graphics.html" class="title">Colorful Graphics</a>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1658811600000" data-listing-file-modified-sort="1664037511732" data-listing-reading-time-sort="1.465" data-listing-title-sort="Working with Colors" data-listing-filename-sort="d2-04_colors.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./modules/images/session7.png" style="height: 40px;">
-</td>
-<td class="listing-subtitle">
-<span class="code">11:30-12:30</span>
-</td>
-<td class="listing-title">
-<a href="./modules/d2-04_colors.html" class="title">Working with Colors</a>
-</td>
-</tr>
-<tr data-index="4" data-listing-date-sort="1658811600000" data-listing-file-modified-sort="1664037511735" data-listing-reading-time-sort="0.135" data-listing-title-sort="Lunch Break" data-listing-filename-sort="d2-05_lunch_break.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./modules/images/lunch-break.png" style="height: 40px;" alt="Plate and utensils.">
-</td>
-<td class="listing-subtitle">
-<span class="code" style="color:#b3b3b3;">12:30-13:30</span>
-</td>
-<td class="listing-title">
-<a href="./modules/d2-05_lunch_break.html" class="title">Lunch Break</a>
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1658811600000" data-listing-file-modified-sort="1664037511755" data-listing-reading-time-sort="1.49" data-listing-title-sort="Working with Layouts and Composition" data-listing-filename-sort="d2-06_layout.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./modules/images/session8.png" style="height: 40px;">
-</td>
-<td class="listing-subtitle">
-<span class="code">13:30-15:00</span>
-</td>
-<td class="listing-title">
-<a href="./modules/d2-06_layout.html" class="title">Working with Layouts and Composition</a>
-</td>
-</tr>
-<tr data-index="6" data-listing-date-sort="1658811600000" data-listing-file-modified-sort="1664037511758" data-listing-reading-time-sort="0.07" data-listing-title-sort="Coffee Break" data-listing-filename-sort="d2-07_coffee_break.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./modules/images/coffee-break.png" style="height: 40px;" alt="A coffee cup.">
-</td>
-<td class="listing-subtitle">
-<span class="code" style="color:#b3b3b3;">15:00-15:30</span>
-</td>
-<td class="listing-title">
-<a href="./modules/d2-07_coffee_break.html" class="title">Coffee Break</a>
-</td>
-</tr>
-<tr data-index="7" data-listing-date-sort="1658811600000" data-listing-file-modified-sort="1664037511761" data-listing-reading-time-sort="0.61" data-listing-title-sort="Group Projects" data-listing-filename-sort="d2-08_project.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td class="listing-image">
-<img src="./modules/images/group.png" style="height: 40px;">
-</td>
-<td class="listing-subtitle">
-<span class="code">15:30-17:00</span>
-</td>
-<td class="listing-title">
-<a href="./modules/d2-08_project.html" class="title">Group Projects</a>
-</td>
-</tr>
 </tbody>
 
 </table>
@@ -459,6 +336,121 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -538,6 +530,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>   
+    <div class="nav-footer-right">© Copyright 2022, Antony Barja</div>
+  </div>
+</footer>
 
 
 

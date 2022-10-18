@@ -1,0 +1,67 @@
+---
+title: ""
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+### 🔴 **1. Exploratory Spatial Data Analysis**
+
+### 1.1 Exploring dataset with rgee 
+
+```{r message=FALSE,warning=FALSE}
+library(rgee)
+library(tidyrgee)
+library(sf)
+library(terra)
+library(raster)
+library(stars)
+library(viridis)
+library(ggplot2)
+library(mapview)
+library(mlr3)
+library(mlr3spatial)
+ee_Initialize()
+```
+
+The Earth Engine DataSet has several variables, in this example, we are going to visualize the night lights dataset.
+
+```{r}
+# Setup the colour palette with the elevation values
+viz = list(
+  min = 0,
+  max = 60,
+  palette = mako(n = 100)
+  )
+```  
+
+
+```{r}
+# Mapping the world elevation
+ee$ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG")$
+  select("avg_rad")$
+  filterDate("2021-01-01","2021-12-31")$
+  max() %>%
+  Map$addLayer(name = "Night light",visParams = viz) + 
+  Map$addLegend(visParams = viz, name = "Elevation")
+```
+
+Exploring the `NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG` dataset with tidyrgee
+
+```{r}
+modis_ic <- ee$ImageCollection$Dataset$NOAA_VIIRS_DNB_MONTHLY_V1_VCMSLCFG |> 
+  as_tidyee()
+```
+```{r}
+head(modis_ic$vrt)
+```
+
+### 🔴 **2. Random Forest Model**
+
+### 🔴 **3. Predicition Malaria**
+
+### 🔴 **4. Precision and Accuracy**

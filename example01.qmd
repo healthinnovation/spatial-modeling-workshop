@@ -1,0 +1,323 @@
+---
+title: ""
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## 🔴 **1. Exploratory Spatial Data Analysis**
+
+Before creating a spatial machine learning model, let's explore some of the data sets available from Earth Engine using the rgee package within R.
+In this dataset there are climatic, environmental, vegetation and other variables that may be of interest.
+
+### 1.1 Quickly review of Data catalog
+
+<a href="https://developers.google.com/earth-engine/datasets/catalog"><img src="https://user-images.githubusercontent.com/23284899/152204233-96e00f05-7b2e-479c-b19a-43aee33b3d7c.jpg" width="100%"/></a>
+
+### 1.2 Exploring dataset with rgee 
+
+```{r message=FALSE,warning=FALSE}
+library(rgee)
+library(tidyrgee)
+library(sf)
+library(terra)
+library(raster)
+library(stars)
+library(viridis)
+library(ggplot2)
+library(mapview)
+ee_Initialize()
+```
+
+The Earth Engine DataSet has several variables, in this example, we are going to visualize the elevation and ndvi dataset.
+
+```{r}
+# Setup the colour palette with the elevation values
+viz = list(
+  min = 500,
+  max = 5000,
+  palette = rocket(n = 100,direction = -1)
+  )
+```  
+
+
+```{r}
+# Mapping the world elevation
+ee$Image("CGIAR/SRTM90_V4") %>%
+  Map$addLayer(name = "Elevation",visParams = viz) + 
+  Map$addLegend(visParams = viz, name = "Elevation")
+```
+
+Exploring the `MOD13Q1.061` dataset with tidyrgee and calculate the mean, sd, maximum and minimum NDVI and EVI value from 2000 to 2022.
+
+```{r}
+modis_ic <- ee$ImageCollection$Dataset$MODIS_061_MOD13Q1 |> 
+  as_tidyee()
+```
+```{r}
+head(modis_ic$vrt)
+```
+
+`tidyrgee` allows works with the tidyverse sintaxis, with this package you could use the functions of `dplyr` (s3 method) like `filter`, `group_by` and `summarise`.
+
+```{r}
+# NDVI statistical using the group_by + summarise functions
+modis_ndvi_yearly <- modis_ic |>
+  select("NDVI") |>
+  filter(date>="2016-01-01",date<="2019-12-31") |> 
+  group_by(year,month) |> 
+  summarise(stat = "mean")
+```
+
+```{r}
+head(modis_ndvi_yearly$vrt)
+```
+
+
+### 1.3 Creating a set of variables for predicting malaria focus 
+
+Malaria is a disease that has a high recurrence in tropical places, this has multiple factors that condition its outbreak, including environmental and climatic factors has a high degree of significance, for this reason we will create a set of data to help predict their probability of occurrence using machine learning in the department of Loreto - Peru.
+
+This malaria dataset 🦟 reported is from 2018, [click here]() to download.
+
+Variables to consider:
+
+ - Temperature 🌡️
+
+ - Precipitation 🌧️
+
+ - NDVI 🍂
+
+
+Exploring spatial dataset of Malaria 🦟
+
+```{r}
+malaria_db <- st_read("dataset/malariadb2018.gpkg",quiet = T)
+head(malaria_db)[1:4]
+```
+
+```{r}
+#| layout-nrow: 1
+# P. falciparum cases by province
+malaria_db |>
+  group_by(province) |> 
+  summarise(fal  = sum(fal,na.rm = T)) |> 
+  ggplot(aes(x = reorder(province,fal),y = fal)) + 
+  geom_bar(stat = "identity",fill = "blue",alpha = 0.6) + 
+  coord_flip() + theme_minimal() + 
+  labs(title = "P.Falciparum cases", x = "",y = "")
+
+# P. vivax cases by province
+malaria_db |>
+  group_by(province) |> 
+  summarise(viv  = sum(viv,na.rm = T)) |> 
+  ggplot(aes(x = reorder(province,viv),y = viv)) + 
+  geom_bar(stat = "identity",fill = "blue",alpha = 0.6) + 
+  coord_flip() + theme_minimal() + 
+  labs(title = "P.vivax cases", x = "",y = "")
+```
+
+Mapping the total cases of P. falciparum and P.vivax
+
+```{r}
+#| layout-nrow: 2
+# Total cumulative cases per year 
+malaria_total <- malaria_db |> 
+  group_by(village) |> 
+  summarise(
+    fal = sum(fal,na.rm = T),
+    viv = sum(viv,na.rm = T)
+    )
+```
+
+```{r}
+# Mapping P.falciparum
+m1 <- malaria_total |> 
+  mapview(
+    zcol = "fal",
+    cex = "fal",
+    lwd = 0.01,
+    layer.name = "P.falciparum") 
+
+#Mapping P.vivax
+m2 <- malaria_total |> 
+  mapview(
+    zcol = "viv",
+    cex = "viv",
+    lwd = 0.01,
+    layer.name = "P.vivax")
+
+m1|m2
+```
+
+Pre-processing of selected variables (precipitation, temperature, NDVI and EVI) to create a complete dataset for modelling. 
+
+```{r}
+# Study area
+loreto <- st_read("https://github.com/healthinnovation/sdb-gpkg/raw/main/box_loreto.gpkg")|>
+  sf_as_ee()
+```
+
+```{r}
+# Climate variables
+terraclim_ic <-  ee$ImageCollection$
+  Dataset$IDAHO_EPSCOR_TERRACLIMATE |> 
+  as_tidyee()
+
+# Vegetation variables
+modis_ic <-  ee$ImageCollection$
+  Dataset$MODIS_061_MOD13Q1 |> 
+  as_tidyee()
+```
+
+```{r}
+# Precipitation dataset
+db_pp <- terraclim_ic |>
+  select("pr") |> 
+  filter(year == "2018") |> 
+  group_by(year,month) |> 
+  summarise(stat= "sum")
+
+# Temperature dataset
+db_temp <- terraclim_ic |>
+  select("tmmx") |> 
+  filter(year == "2018") |> 
+  group_by(year,month) |> 
+  summarise(stat= "mean")
+
+# Vegetation index 
+db_ndvi <- modis_ic |>
+  select("NDVI") |> 
+  filter(year == "2018") |> 
+  group_by(year,month) |> 
+  summarise(stat= "mean")
+```
+
+```{r}
+#| layout-nrow: 2
+# Precipitation legend
+viz_pp <- list(
+  min = 462,
+  max = 8272,
+  palette = mako(n = 10,direction = -1)
+)
+
+# Temperature legend
+viz_temp <- list(
+  min = 9.78,
+  max = 32.67,
+  palette = rocket(n = 10)
+)
+
+# NDVI lenged
+viz_ndvi <- list(
+  min =0.35,
+  max =  0.79,
+  palette = viridis(n = 10)
+)
+
+Map$centerObject(loreto)
+```
+
+```{r}
+# Precipitation mapping
+m1 <- Map$addLayer(db_pp$ee_ob$sum()$clip(loreto),visParams = viz_pp) + 
+  Map$addLegend(visParams = viz_pp, "Precipitation",position = "bottomleft")
+
+# Temperature mapping
+m2 <- Map$addLayer(db_temp$ee_ob$mean()$multiply(0.1)$clip(loreto),visParams = viz_temp) + 
+  Map$addLegend(visParams = viz_temp,name = "Temperature", position = "bottomright")
+
+m1 | m2
+```
+
+```{r}
+# NDVI mapping 
+m3 <- Map$addLayer(
+  db_ndvi$ee_ob$mean()$multiply(0.0001)$clip(loreto),
+  visParams = viz_ndvi) + 
+  Map$addLegend(visParams = viz_ndvi,name = "NDVI")
+m3
+```
+
+
+```{r eval=FALSE}
+# Downloading ic to raster
+ee_to_pp <- ee_as_raster(
+  image = db_pp$ee_ob$sum()$clip(loreto)$toDouble(),
+  region = loreto$geometry(),
+  scale = 1000,
+  dsn = "dataset/percipitation.tif")
+
+ee_to_temp <- ee_as_raster(
+  image = db_temp$ee_ob$mean()$multiply(0.1)$clip(loreto)$toDouble(),
+  region = loreto$geometry(),
+  scale = 1000,
+  dsn = "dataset/temperature.tif")
+
+ee_to_ndvi <- ee_as_raster(
+  image = db_ndvi$ee_ob$mean()$multiply(0.0001)$clip(loreto)$toDouble(),
+  region = loreto$geometry(),
+  scale = 1000,
+  dsn = "dataset/ndvi.tif")
+```
+
+
+```{r message=FALSE,warning=FALSE}
+# Creating a dataset for modeling
+malaria_annual <- malaria_db %>% 
+  group_by(village) %>% 
+  summarise(fal = sum(fal,na.rm = TRUE)) %>% 
+  st_cast("POINT")
+```
+
+```{r}
+# Reading the variables stack 
+stack_variables <- list.files(
+  "dataset/",
+  pattern ="*.tif$"
+  ) %>% 
+  sprintf("dataset/%s",.) %>% 
+  raster::stack()
+names(stack_variables) <- c("ndvi","pp","temp")
+```
+
+```{r}
+# Dataset for model
+db_for_model <- st_extract(
+  st_as_stars(stack_variables),
+  malaria_annual) %>% 
+  st_as_sf() %>% 
+  mutate(
+    malaria = malaria_annual$fal,
+    lat = st_coordinates(.)[,2],
+    lon = st_coordinates(.)[,1]
+    ) %>% 
+  st_set_geometry(NULL)
+names(db_for_model) <- c("ndvi","pp","temp","malaria","lat","lon")
+```
+
+### 🔴 **2. Random Forest Model**
+
+```{r}
+fit = glm(malaria ~ pp + temp + ndvi,
+          family = poisson(),
+          data = db_for_model)
+```
+
+### 🔴 **3. Predicition Malaria**
+
+```{r eval=FALSE}
+# making the prediction
+pred = terra::predict(stack_variables, model = fit, type = "response")
+```
+
+### 🔴 **4. Precision and Accuracy** 
+
+```{r}
+
+```

@@ -9,7 +9,6 @@ listing:
     field-display-names:
       subtitle: "Time"
       title: "Module"
-    table-hover: true
     date-format: "MMMM DD, YYYY"
     sort: [filename]
     sort-ui: false
@@ -23,23 +22,22 @@ listing:
       subtitle: "Time"
       title: "Module"
       author: "Presenter"
-    table-hover: true
     date-format: "MMMM DD, YYYY"
     sort: [filename]
     sort-ui: false
     filter-ui: false
 tbl-colwidths: [5,20,50,25]
-editor: source
+editor: visual
 ---
 
-## Day 1
+# Day 1
 
 Monday, July 25, 2022
 
 ::: {#schedule-day1}
 :::
 
-## Day 2
+# Day 2
 
 Tuesday, July 26, 2022
 

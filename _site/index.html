@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Spatial predictive models with R - Spatial predictive models with R</title>
+<title>Spatial predictive models with R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,16 +29,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href=".//images/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -60,15 +61,13 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Spatial predictive models with R - Spatial predictive models with R">
+<meta property="og:title" content="">
 <meta property="og:description" content="Workshop-2022 :: Created by Gabriel Carrasco">
 <meta property="og:site-name" content="Spatial predictive models with R">
-<meta name="twitter:title" content="Spatial predictive models with R - Spatial predictive models with R">
+<meta name="twitter:title" content="">
 <meta name="twitter:description" content="Workshop-2022 :: Created by Gabriel Carrasco">
-<meta name="twitter:image" content="https://rstudio-conf-2022.github.io/ggplot2-graphic-design//images/twitter-card.png">
-<meta name="twitter:creator" content="@Gabc91">
-<meta name="twitter:image-height" content="679">
-<meta name="twitter:image-width" content="1200">
+<meta name="twitter:image" content="/images/twitter-card.png">
+<meta name="twitter:creator" content="@antony_barja">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -80,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/logo.png" alt="" class="navbar-logo">
+    <img src="./images/ggplot2.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Spatial predictive models with R</span>
@@ -91,44 +90,73 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./installation.html">Installation</a>
+  </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sessions" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sessions</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-sessions">    
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-demos" role="button" data-bs-toggle="dropdown" aria-expanded="false">Demos</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-demos">    
         <li>
-    <a class="dropdown-item" href="./modules/d1-01_introduction.html">
- <span class="dropdown-text">Introduction</span></a>
+    <a class="dropdown-item" href="./example01.html">
+ <span class="dropdown-text">Example 01</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./example02.html">
+ <span class="dropdown-text">Example 02</span></a>
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./schedule.html">Schedule</a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
+        <li>
+    <a class="dropdown-item" href="https://geocompr.robinlovelace.net/">
+ <span class="dropdown-text">Geocomputation with R</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="https://r-spatial.org/book/">
+ <span class="dropdown-text">Spatial Data Science</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://sdesabbata.github.io/r-for-geographic-data-science/">
+ <span class="dropdown-text">R for Geographic Data Science</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-downloads" role="button" data-bs-toggle="dropdown" aria-expanded="false">Downloads</a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-downloads">    
-        <li>
-    <a class="dropdown-item" href="./ggplot2-course-material.zip">
- <span class="dropdown-text">All Course Materials</span></a>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/rstudio-conf-2022/ggplot2-graphic-design"><i class="bi bi-github" role="img">
+</i> 
+ </a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="./ggplot2-course-data.zip">
- <span class="dropdown-text">Data Sets</span></a>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/rstudio-conf-2022/ggplot2-graphic-design"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="./ggplot2-course-fonts.zip">
- <span class="dropdown-text">Font Files</span></a>
+  <li class="nav-item compact">
+    <a class="nav-link" href="./https"><i class="bi bi-instagram" role="img">
+</i> 
+ </a>
   </li>  
-    </ul>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./license.html">License</a>
+  <li class="nav-item compact">
+    <a class="nav-link" href="./https"><i class="bi bi-linkedin" role="img">
+</i> 
+ </a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://github.com/rstudio-conf-2022/ggplot2-graphic-design">GitHub</a>
+  <li class="nav-item compact">
+    <a class="nav-link" href="./https"><i class="bi bi-facebook" role="img">
+</i> 
+ </a>
   </li>  
 </ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -143,43 +171,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#an-introduction-on-how-to-create-a-spatial-prediction-model-in-r" id="toc-an-introduction-on-how-to-create-a-spatial-prediction-model-in-r" class="nav-link active" data-scroll-target="#an-introduction-on-how-to-create-a-spatial-prediction-model-in-r">An introduction on how to create a spatial prediction model in R</a></li>
-  <li><a href="#course-overview" id="toc-course-overview" class="nav-link" data-scroll-target="#course-overview">Course Overview</a>
+  <li><a href="#an-introduction-on-how-to-create-a-spatial-prediction-model-in-r" id="toc-an-introduction-on-how-to-create-a-spatial-prediction-model-in-r" class="nav-link active" data-scroll-target="#an-introduction-on-how-to-create-a-spatial-prediction-model-in-r"><strong>An introduction on how to create a spatial prediction model in R</strong></a></li>
+  <li><a href="#course-overview" id="toc-course-overview" class="nav-link" data-scroll-target="#course-overview"><strong>Course Overview</strong></a>
   <ul class="collapse">
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
-  <li><a href="#is-this-course-for-me" id="toc-is-this-course-for-me" class="nav-link" data-scroll-target="#is-this-course-for-me">Is this course for me?</a></li>
-  </ul></li>
-  <li><a href="#instructor" id="toc-instructor" class="nav-link" data-scroll-target="#instructor">Instructor</a></li>
-  <li><a href="#prework" id="toc-prework" class="nav-link" data-scroll-target="#prework">Prework</a>
-  <ul class="collapse">
-  <li><a href="#required-packages" id="toc-required-packages" class="nav-link" data-scroll-target="#required-packages">Required Packages</a></li>
-  <li><a href="#required-typefaces" id="toc-required-typefaces" class="nav-link" data-scroll-target="#required-typefaces">Required Typefaces</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><strong>Learning objectives</strong></a></li>
+  <li><a href="#instructor" id="toc-instructor" class="nav-link" data-scroll-target="#instructor"><strong>Instructor</strong></a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/rstudio-conf-2022/ggplot2-graphic-design/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/rstudio-conf-2022/ggplot2-graphic-design/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ambarja/website-quarto-template/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/ambarja/website-quarto-template/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title"><span style="font-family: Boska; font-size: 2.75rem; font-weight: 800;">Spatial predictive models with R</span></h1>
-</div>
 
-
-
-<div class="quarto-title-meta">
-
-    
-    
-  </div>
-  
-
-</header>
 
 <p><img src="images/logo.png" class="img-fluid" style="float:right;padding: 0 0 0 10px;" alt="Course Hex Logo" width="250"></p>
 <section id="an-introduction-on-how-to-create-a-spatial-prediction-model-in-r" class="level1">
-<h1>An introduction on how to create a spatial prediction model in R</h1>
+<h1><strong>An introduction on how to create a spatial prediction model in R</strong></h1>
 <p>Workshop-2022 :: Created by Gabriel Carrasco</p>
 <hr>
 <p><span class="code">📆  July 25 and 26, 2022</span><br>
@@ -189,12 +197,12 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="course-overview" class="level1">
-<h1>Course Overview</h1>
+<h1><strong>Course Overview</strong></h1>
 <p>Creating engaging and accessible data visualizations of high quality in an efficient and preferably reproducible way is an essential tool in a data scientist’s toolbox. After completing the course, participants will have a solid understanding of data visualization principles and the functionality of the ggplot2 graphics library and helpful extension libraries to create highly customized graphics without the need for post-processing.</p>
 <p>We will discuss the main concepts of the grammar of graphics and use hands-on examples to explore ggplot2’s utility to create multi-layered, more complex graphs. The workshop covers a short overview of the basics of ggplot2 and quickly focuses on the most important steps and helpful tips to create visually appealing and complex graphics both in theory and practice. The power of ggplot2 will be illustrated with advanced real–life examples that help to understand data visualization principles and useful coding tricks.</p>
 <p>The course covers complex code examples that are suited for more experienced ggplot2 users but designed to be informative for participants with minimal prior experience in ggplot2 and data visualization. As part of the training, attendees can download the course material from the course webpage for future reference.</p>
 <section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<h2 class="anchored" data-anchor-id="learning-objectives"><strong>Learning objectives</strong></h2>
 <ul>
 <li>Understanding the general concepts of ggplot2.</li>
 <li>Learning the many options of customizing a ggplot.</li>
@@ -202,87 +210,13 @@ ul.task-list li input[type="checkbox"] {
 <li>Being able to generate complex plots without the need of post-processing.</li>
 </ul>
 </section>
-<section id="is-this-course-for-me" class="level2">
-<h2 class="anchored" data-anchor-id="is-this-course-for-me">Is this course for me?</h2>
-<p>This course will be appropriate for you if you answer yes to these questions:</p>
-<ul>
-<li><p><em>Do you aim to build graphics in a fully reproducible way without the need to manually adjust details afterwards?</em></p></li>
-<li><p><em>Do you enjoy using the {ggplot2} package but are interested in doing more with it?</em></p></li>
-<li><p><em>Would you like to learn how to improve future data visualizations in terms of accessibility, impact, and complexity?</em></p></li>
-</ul>
-</section>
-</section>
-<section id="instructor" class="level1">
-<h1>Instructor</h1>
+<section id="instructor" class="level2">
+<h2 class="anchored" data-anchor-id="instructor"><strong>Instructor</strong></h2>
 <p><img src="https://avatars.githubusercontent.com/u/7484990?v=4.png" class="img-fluid" style="float:right;padding: 0 0 0 10px;" alt="Headshot of Dr. Cédric Scherer" width="200"></p>
 <p><a href="https://gcarrasco.rbind.io/"><strong>PhD. Gabriel Carrasco</strong></a> (he/him) Assistant Professor in Epidemiology at the School of Public Health and Associate Researcher at the Institute of Tropical Medicine “Alexander von Humboldt”, Universidad Peruana Cayetano Heredia (UPCH). Gabriel Carrasco is currently the director of the Health Innovation Lab and a board member of CLIMA, the Center for Latin-American Research on Climate Change and Health, both at UPCH. He earned his MS in Epidemiology at the School of Public Health, UPCH and is currently a PhD candidate in Public Health at the University of California, San Diego (UCSD).</p>
 <div data-align="center">
-<p><a href="https://www.cedricscherer.com"><img border="0" alt="Blog" src="https://assets.dryicons.com/uploads/icon/svg/4926/home.svg" width="35" height="35"></a>  <a href="mailto:info@data-vizard.com"><img border="0" alt="Email" src="https://assets.dryicons.com/uploads/icon/svg/8009/02dc3a5c-6504-4347-85fb-3f510cfecc45.svg" width="35" height="35"></a>  <a href="https://twitter.com/CedScherer"><img border="0" alt="Twitter" src="https://assets.dryicons.com/uploads/icon/svg/8385/c23f7ffc-ca8d-4246-8978-ce9f6d5bcc99.svg" width="35" height="35"></a>  <a href="https://www.instagram.com/cedscherer/"><img border="0" alt="Instagram" src="https://assets.dryicons.com/uploads/icon/svg/8330/62263227-bb78-4b42-a9a9-e222e0cc7b97.svg" width="35" height="35"></a>  <a href="https://www.behance.net/cedscherer"><img border="0" alt="Behance" src="https://assets.dryicons.com/uploads/icon/svg/8264/04073ce3-5b98-4f32-88d3-82b2ef828066.svg" width="35" height="35"></a>  <a href="https://www.linkedin.com/in/cedricpscherer/"><img border="0" alt="LinkedIn" src="https://assets.dryicons.com/uploads/icon/svg/8337/a347cd89-1662-4421-be90-58e5e8004eae.svg" width="35" height="35"></a>   <a href="https://www.buymeacoffee.com/z3tt" target="_blank"></a></p>
+<p><a href="https://www.cedricscherer.com"><img src="https://assets.dryicons.com/uploads/icon/svg/4926/home.svg" alt="Blog" border="0" width="35" height="35"></a>  <a href="mailto:info@data-vizard.com"><img src="https://assets.dryicons.com/uploads/icon/svg/8009/02dc3a5c-6504-4347-85fb-3f510cfecc45.svg" alt="Email" border="0" width="35" height="35"></a>  <a href="https://twitter.com/CedScherer"><img src="https://assets.dryicons.com/uploads/icon/svg/8385/c23f7ffc-ca8d-4246-8978-ce9f6d5bcc99.svg" alt="Twitter" border="0" width="35" height="35"></a>  <a href="https://www.instagram.com/cedscherer/"><img src="https://assets.dryicons.com/uploads/icon/svg/8330/62263227-bb78-4b42-a9a9-e222e0cc7b97.svg" alt="Instagram" border="0" width="35" height="35"></a>  <a href="https://www.behance.net/cedscherer"><img src="https://assets.dryicons.com/uploads/icon/svg/8264/04073ce3-5b98-4f32-88d3-82b2ef828066.svg" alt="Behance" border="0" width="35" height="35"></a>  <a href="https://www.linkedin.com/in/cedricpscherer/"><img src="https://assets.dryicons.com/uploads/icon/svg/8337/a347cd89-1662-4421-be90-58e5e8004eae.svg" alt="LinkedIn" border="0" width="35" height="35"></a>   <a href="https://www.buymeacoffee.com/z3tt" target="_blank"></a></p>
 </div>
-</section>
-<section id="prework" class="level1">
-<h1>Prework</h1>
-<p>The workshop will also cover the basic logic of ggplot2 and its components. However, some pre-knowledge on how the package works is beneficial for following the examples and for the group exercises. A good overview is provided might by the “First Steps” chapter of the ggplot2 book by Hadley Wickham et al.: <a href="https://ggplot2-book.org/getting-started.html">ggplot2-book.org/getting-started.html</a></p>
-<p>The example codes and the hands-on workshop parts are run in the Rstudio cloud. Thus, nothing but a laptop is needed.</p>
-<p>If you want to run the workshop content locally on your machine, please make sure to install a suitable IDE (Rstudio, VS Code or others), a recent version of R (4.1+) and the following packages and typefaces.</p>
-<p><em>For Mac OS users:</em><br>
-Please make sure that <a href="https://www.xquartz.org/">XQuartz is installed</a> which is needed to use the cairo pdf device.</p>
-<section id="required-packages" class="level2">
-<h2 class="anchored" data-anchor-id="required-packages">Required Packages</h2>
-<ul>
-<li><strong>tidyverse packages and friends</strong>
-<ul>
-<li>ggplot2, readr, tibble, dplyr, tidyr, forcats, stringr, lubridate, here, systemfonts, scales</li>
-</ul></li>
-<li><strong>extension packages</strong>
-<ul>
-<li>ggrepel, ggforce, ggtext, ggdist, ggbeeswarm, gghalves, ggblur, patchwork</li>
-</ul></li>
-<li><strong>color packages</strong>
-<ul>
-<li>viridis, RColorBrewer, rcartocolor, scico, ggsci, ggthemes, nord, MetBrewer, colorspace, colorblindr</li>
-</ul></li>
-<li><strong>util packages</strong>
-<ul>
-<li>magick, grid, grDevices</li>
-</ul></li>
-<li><strong>data packages</strong>
-<ul>
-<li>palmerpenguins, rnaturalearth</li>
-</ul></li>
-<li><strong>rspatial packages</strong>
-<ul>
-<li>sf, rmapshaper</li>
-</ul></li>
-</ul>
-<p>Run this code to install the packages if needed:</p>
-<pre><code>packages &lt;- c(
-  "ggplot2", "readr", "tibble", "tidyr", "forcats", "stringr",
-  "lubridate", "here", "systemfonts", "magick", "scales", "grid",
-  "grDevices", "colorspace", "viridis", "RColorBrewer", "rcartocolor",
-  "scico", "ggsci", "ggthemes", "nord", "MetBrewer", "ggrepel",
-  "ggforce", "ggtext", "ggdist", "ggbeeswarm", "gghalves", "patchwork", 
-  "palmerpenguins", "rnaturalearth", "sf", "rmapshaper", "devtools"
-)
-
-install.packages(setdiff(packages, rownames(installed.packages())))  
-
-## install {colorblindr} and requirements
-remotes::install_github("wilkelab/cowplot")
-remotes::install_github("clauswilke/colorblindr")</code></pre>
-</section>
-<section id="required-typefaces" class="level2">
-<h2 class="anchored" data-anchor-id="required-typefaces">Required Typefaces</h2>
-<p>We will make use of custom fonts. A lot.<br>
-If you want to follow all contents locally, make sure the following typefaces are installed:</p>
-<ul>
-<li>Roboto Condensed: <a href="www.fonts.google.com/specimen/Roboto+Condensed">fonts.google.com/specimen/Roboto+Condensed</a></li>
-<li>Cabinet Grotesk: <a href="www.fontshare.com/fonts/cabinet-grotesk">fontshare.com/fonts/cabinet-grotesk</a></li>
-<li>Tabular: <a href="www.fontshare.com/fonts/tabular">fontshare.com/fonts/tabular</a></li>
-<li>Boska: <a href="www.fontshare.com/fonts/boska">fontshare.com/fonts/boska</a></li>
-<li>Pally: <a href="www.fontshare.com/fonts/pally">fontshare.com/fonts/pally</a></li>
-</ul>
-<p>You can download all typefaces as a single zip file <a href="ggplot2-course-fonts.zip">here</a>.</p>
 
 
 </section>
@@ -309,6 +243,121 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -391,7 +440,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>   
-    <div class="nav-footer-right">© Copyright 2022, Healthinnovation</div>
+    <div class="nav-footer-right">© Copyright 2022, Antony Barja</div>
   </div>
 </footer>
 

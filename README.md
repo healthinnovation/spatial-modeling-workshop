@@ -1,1 +1,0 @@
-# spatial-modeling-workshop

@@ -1,0 +1,62 @@
+---
+title: ""
+---
+
+## 🔴 Prework
+
+In this section, you will install all the R packages that will be used in this workshop, just follow the steps set out in the following lines of code.
+
+::: callout-Observation
+-   Remember it's necessary to have previously installed R, Rtools, and Rstudio in your desktop.
+
+-   Rtools is only necessary for Windows OS users. You can download Rtools [here](https://cran.r-project.org/bin/windows/Rtools/rtools40.html) 📥.
+:::
+
+## 🔴 Set up my Rstudio enviroment
+
+Open Rstudio, then copy and paste the R code into the console and finally use enter.
+
+![](images/installation-01.png)
+
+```{r eval=FALSE}
+pkgs <- c(
+  "mapview","sf", "tidyverse",
+  "rgee","tidyrgee","tidyterra",
+  "ggspatial", "terra","patchwork",
+  "raster","geojsonio","viridis",
+  "stars","mlr3","mlr3spatiotempcv"
+  )
+install.packages(pkgs)
+```
+
+![](images/installation-02.png)
+
+## 🔴 Additional documentation
+
+rgee package need some extra configuration in your machine, in the next section you learning how set up and registration of credentials.
+
+::: callout-Observation
+- Remember it's necessary to register a account in google earth engine with a gmail account.
+- To register on Google Earth Engine, you only need answer a few short questions.
+:::
+
+For the installation of rgee dependencies, use the following function (this function can only be used once):
+
+```{r eval=FALSE}
+rgee::ee_install()
+```
+
+![](https://user-images.githubusercontent.com/23284899/151856231-345773f5-fb60-4b4d-a584-d6c532ad1aa4.mp4)
+
+Finally, with your gmail account verified, you can authenticate and initialise the Earth Engine R API in the following way.
+
+![](https://user-images.githubusercontent.com/23284899/151863010-c37708a5-a23c-4cb3-a7ab-7fe1daeea3c5.mp4)
+
+
+
+
+
+
+
+
+
