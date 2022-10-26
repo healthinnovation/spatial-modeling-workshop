@@ -11,21 +11,19 @@ knitr::opts_chunk$set(
 
 ## 🔴 **1. Exploratory Spatial Data Analysis**
 
-Before creating a spatial machine learning model, let's explore some of the data sets available from Earth Engine using the rgee package within R.
-In this dataset there are climatic, environmental, vegetation and other variables that may be of interest.
+Before creating a spatial machine learning model, let's explore some of the data sets available from Earth Engine using the rgee package within R. In this dataset there are climatic, environmental, vegetation and other variables that may be of interest.
 
 ### 1.1 Quickly review of Data catalog
 
 <a href="https://developers.google.com/earth-engine/datasets/catalog"><img src="https://user-images.githubusercontent.com/23284899/152204233-96e00f05-7b2e-479c-b19a-43aee33b3d7c.jpg" width="100%"/></a>
 
-### 1.2 Exploring dataset with rgee 
+### 1.2 Exploring dataset with rgee
 
 ```{r message=FALSE,warning=FALSE}
+library(tidyverse)
 library(rgee)
 library(tidyrgee)
 library(sf)
-library(terra)
-library(raster)
 library(stars)
 library(viridis)
 library(ggplot2)
@@ -42,8 +40,7 @@ viz = list(
   max = 5000,
   palette = rocket(n = 100,direction = -1)
   )
-```  
-
+```
 
 ```{r}
 # Mapping the world elevation
@@ -58,6 +55,7 @@ Exploring the `MOD13Q1.061` dataset with tidyrgee and calculate the mean, sd, ma
 modis_ic <- ee$ImageCollection$Dataset$MODIS_061_MOD13Q1 |> 
   as_tidyee()
 ```
+
 ```{r}
 head(modis_ic$vrt)
 ```
@@ -77,8 +75,7 @@ modis_ndvi_yearly <- modis_ic |>
 head(modis_ndvi_yearly$vrt)
 ```
 
-
-### 1.3 Creating a set of variables for predicting malaria focus 
+### 1.3 Creating a set of variables for predicting malaria focus
 
 Malaria is a disease that has a high recurrence in tropical places, this has multiple factors that condition its outbreak, including environmental and climatic factors has a high degree of significance, for this reason we will create a set of data to help predict their probability of occurrence using machine learning in the department of Loreto - Peru.
 
@@ -86,12 +83,11 @@ This malaria dataset 🦟 reported is from 2018, [click here]() to download.
 
 Variables to consider:
 
- - Temperature 🌡️
+-   Temperature 🌡️
 
- - Precipitation 🌧️
+-   Precipitation 🌧️
 
- - NDVI 🍂
-
+-   NDVI 🍂
 
 Exploring spatial dataset of Malaria 🦟
 
@@ -154,7 +150,7 @@ m2 <- malaria_total |>
 m1|m2
 ```
 
-Pre-processing of selected variables (precipitation, temperature, NDVI and EVI) to create a complete dataset for modelling. 
+Pre-processing of selected variables (precipitation, temperature, NDVI and EVI) to create a complete dataset for modelling.
 
 ```{r}
 # Study area
@@ -244,7 +240,6 @@ m3 <- Map$addLayer(
 m3
 ```
 
-
 ```{r eval=FALSE}
 # Downloading ic to raster
 ee_to_pp <- ee_as_raster(
@@ -266,7 +261,6 @@ ee_to_ndvi <- ee_as_raster(
   dsn = "dataset/ndvi.tif")
 ```
 
-
 ```{r message=FALSE,warning=FALSE}
 # Creating a dataset for modeling
 malaria_annual <- malaria_db %>% 
@@ -275,7 +269,7 @@ malaria_annual <- malaria_db %>%
   st_cast("POINT")
 ```
 
-```{r}
+```{r} 
 # Reading the variables stack 
 stack_variables <- list.files(
   "dataset/",
@@ -303,7 +297,7 @@ names(db_for_model) <- c("ndvi","pp","temp","malaria","lat","lon")
 
 ### 🔴 **2. Random Forest Model**
 
-```{r}
+```{r eval=FALSE}
 fit = glm(malaria ~ pp + temp + ndvi,
           family = poisson(),
           data = db_for_model)
@@ -316,8 +310,7 @@ fit = glm(malaria ~ pp + temp + ndvi,
 pred = terra::predict(stack_variables, model = fit, type = "response")
 ```
 
-### 🔴 **4. Precision and Accuracy** 
+### 🔴 **4. Precision and Accuracy**
 
-```{r}
-
+```{r eval=FALSE}
 ```
